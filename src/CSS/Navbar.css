@@ -1,0 +1,168 @@
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: #1d4ed8;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo svg {
+  font-size: 27px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 10px 15px;
+  border-radius: 8px;
+
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.nav-links a svg {
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+/* Profile Button */
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+  border-radius: 8px;
+
+  background: #1d4ed8;
+  color: #ffffff;
+
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.profile-btn svg {
+  font-size: 16px;
+}
+
+.profile-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(29, 78, 216, 0.25);
+}
+
+/* Active / Focus */
+.nav-links a:focus,
+.profile-btn:focus {
+  outline: none;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .navbar-container {
+    padding: 0 18px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-links a {
+    padding: 9px 10px;
+  }
+
+  .nav-links a span {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar-container {
+    height: auto;
+    min-height: 65px;
+    padding: 10px 15px;
+
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .logo svg {
+    font-size: 23px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: space-around;
+
+    border-top: 1px solid #eeeeee;
+    padding-top: 8px;
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+  }
+
+  .nav-links a span {
+    display: inline;
+    font-size: 12px;
+  }
+
+  .profile-btn {
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+}

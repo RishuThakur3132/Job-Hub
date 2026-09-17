@@ -1,0 +1,308 @@
+profile-page {
+  min-height: 75vh;
+  padding: 50px 20px;
+  background: #f5f7fb;
+}
+
+.profile-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.profile-header {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  flex-shrink: 0;
+}
+
+.profile-header-content {
+  flex: 1;
+}
+
+.profile-header-content h1 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 30px;
+}
+
+.profile-header-content p,
+.profile-header-content span {
+  margin: 7px 0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-header-content svg {
+  color: #2563eb;
+}
+
+.edit-btn {
+  padding: 11px 18px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: white;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-btn:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.profile-card h2 {
+  margin: 0 0 20px;
+  color: #1e293b;
+  font-size: 21px;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.profile-item:last-of-type {
+  border-bottom: none;
+}
+
+.item-icon {
+  width: 42px;
+  height: 42px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-item div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-item small {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.profile-item strong {
+  color: #334155;
+  font-size: 15px;
+}
+
+.skills-section {
+  margin-top: 25px;
+}
+
+.skills-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #334155;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.skills-title svg {
+  color: #2563eb;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills span {
+  padding: 8px 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-bottom {
+  margin-top: 25px;
+  padding: 25px 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-bottom h2 {
+  margin: 0 0 7px;
+  color: #1e293b;
+  font-size: 20px;
+}
+
+.profile-bottom p {
+  margin: 0;
+  color: #64748b;
+}
+
+.bottom-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.jobs-btn,
+.logout-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.jobs-btn {
+  background: #2563eb;
+}
+
+.jobs-btn:hover {
+  background: #1d4ed8;
+}
+
+.logout-btn {
+  background: #ef4444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+.profile-login-box {
+  max-width: 400px;
+  margin: auto;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profile-login-box > svg {
+  font-size: 45px;
+  color: #2563eb;
+}
+
+.profile-login-box h2 {
+  color: #1e293b;
+}
+
+.profile-login-box p {
+  color: #64748b;
+}
+
+.profile-login-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-header-content p,
+  .profile-header-content span {
+    justify-content: center;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bottom-buttons {
+    width: 100%;
+  }
+
+  .jobs-btn,
+  .logout-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 30px 15px;
+  }
+
+  .profile-header,
+  .profile-card,
+  .profile-bottom {
+    padding: 22px;
+  }
+
+  .profile-header-content h1 {
+    font-size: 25px;
+  }
+
+  .bottom-buttons {
+    flex-direction: column;
+  }
+}
