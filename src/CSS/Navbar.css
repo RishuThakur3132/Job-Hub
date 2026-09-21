@@ -1,168 +1,167 @@
-/* Navbar */
 .navbar {
   width: 100%;
   background: #ffffff;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Container */
 .navbar-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 25px;
-  height: 72px;
-
+  height: 75px;
+  margin: auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-
+  color: #2563eb;
   text-decoration: none;
-  color: #1d4ed8;
   font-size: 24px;
   font-weight: 800;
-  letter-spacing: -0.5px;
 }
 
 .logo svg {
-  font-size: 27px;
+  font-size: 26px;
 }
 
-/* Navigation */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 30px;
 }
 
 .nav-links a {
   display: flex;
   align-items: center;
   gap: 7px;
-
-  padding: 10px 15px;
-  border-radius: 8px;
-
+  color: #374151;
   text-decoration: none;
-  color: #4b5563;
   font-size: 15px;
   font-weight: 600;
-
-  transition: all 0.3s ease;
-}
-
-.nav-links a svg {
-  font-size: 15px;
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
-  color: #1d4ed8;
-  background: #eff6ff;
+  color: #2563eb;
 }
 
-/* Profile Button */
-.profile-btn {
+.auth-buttons {
   display: flex;
   align-items: center;
-  gap: 8px;
-
-  padding: 10px 18px;
-  border-radius: 8px;
-
-  background: #1d4ed8;
-  color: #ffffff;
-
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-
-  transition: all 0.3s ease;
+  gap: 10px;
 }
 
-.profile-btn svg {
-  font-size: 16px;
+.login-btn,
+.signup-btn,
+.profile-btn,
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn {
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+}
+
+.login-btn:hover {
+  background: #dbeafe;
+}
+
+.signup-btn {
+  color: white;
+  background: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.signup-btn:hover {
+  background: #1d4ed8;
+}
+
+.profile-btn {
+  color: white;
+  background: #2563eb;
+  border: 1px solid #2563eb;
 }
 
 .profile-btn:hover {
-  background: #1e40af;
-  transform: translateY(-1px);
-  box-shadow: 0 5px 12px rgba(29, 78, 216, 0.25);
+  background: #1d4ed8;
 }
 
-/* Active / Focus */
-.nav-links a:focus,
-.profile-btn:focus {
-  outline: none;
+.logout-btn {
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .navbar-container {
-    padding: 0 18px;
-  }
-
-  .nav-links {
-    gap: 2px;
-  }
-
-  .nav-links a {
-    padding: 9px 10px;
-  }
-
-  .nav-links a span {
-    display: none;
-  }
+.logout-btn:hover {
+  background: #fee2e2;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+.login-btn:hover,
+.signup-btn:hover,
+.profile-btn:hover,
+.logout-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
   .navbar-container {
     height: auto;
-    min-height: 65px;
-    padding: 10px 15px;
-
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .logo {
-    font-size: 21px;
-  }
-
-  .logo svg {
-    font-size: 23px;
+    min-height: 70px;
+    gap: 15px;
   }
 
   .nav-links {
-    order: 3;
-    width: 100%;
-    justify-content: space-around;
-
-    border-top: 1px solid #eeeeee;
-    padding-top: 8px;
+    gap: 15px;
   }
 
-  .nav-links a {
-    padding: 8px 12px;
+  .nav-links span {
+    display: none;
   }
 
-  .nav-links a span {
-    display: inline;
-    font-size: 12px;
+  .auth-buttons span {
+    display: none;
   }
 
-  .profile-btn {
-    padding: 9px 13px;
-    font-size: 13px;
+  .login-btn,
+  .signup-btn,
+  .profile-btn,
+  .logout-btn {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar-container {
+    padding: 0 12px;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .auth-buttons {
+    gap: 6px;
   }
 }

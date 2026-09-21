@@ -1,28 +1,42 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaBriefcase,
   FaHome,
   FaSearch,
-  // FaClipboardList,
-  // FaUser,
-  FaInfoCircle
+  FaUser,
+  FaInfoCircle,
+  FaSignInAlt,
+  FaUserPlus,
+  FaSignOutAlt,
 } from "react-icons/fa";
 import "../CSS/Navbar.css";
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const [isLogged, setIsLogged] = useState(
+    localStorage.getItem("isLogged") === "true"
+  );
+
+  const logout = () => {
+    localStorage.removeItem("isLogged");
+    localStorage.removeItem("currentUser");
+
+    setIsLogged(false);
+    navigate("/");
+  };
+
   return (
     <header className="navbar">
       <div className="navbar-container">
 
-        {/* Logo */}
         <Link to="/" className="logo">
           <FaBriefcase />
           <span>JobHub</span>
         </Link>
 
-        {/* Navigation */}
         <nav className="nav-links">
-
           <Link to="/">
             <FaHome />
             <span>Home</span>
@@ -33,23 +47,39 @@ function Navbar() {
             <span>Jobs</span>
           </Link>
 
-          {/* <Link to="/application">
-            <FaClipboardList />
-            <span>Application</span>
-          </Link> */}
-
           <Link to="/about">
             <FaInfoCircle />
             <span>About</span>
           </Link>
-
         </nav>
 
-        {/* Profile
-        <Link to="/profile" className="profile-btn">
-          <FaUser />
-          <span>Profile</span>
-        </Link> */}
+        <div className="auth-buttons">
+          {isLogged ? (
+            <>
+              <Link to="/profile" className="profile-btn">
+                <FaUser />
+                <span>Profile</span>
+              </Link>
+
+              <button onClick={logout} className="logout-btn">
+                <FaSignOutAlt />
+                <span>Logout</span>
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="login-btn">
+                <FaSignInAlt />
+                <span>Login</span>
+              </Link>
+
+              <Link to="/signup" className="signup-btn">
+                <FaUserPlus />
+                <span>Sign Up</span>
+              </Link>
+            </>
+          )}
+        </div>
 
       </div>
     </header>
