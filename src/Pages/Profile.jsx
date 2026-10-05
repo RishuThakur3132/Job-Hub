@@ -9,7 +9,8 @@ import {
   FaGraduationCap,
   FaCode,
   FaEdit,
-  FaSignOutAlt
+  FaSignOutAlt,
+  FaArrowRight,
 } from "react-icons/fa";
 
 import Navbar from "../Components/Navbar";
@@ -21,11 +22,18 @@ function Profile() {
 
   const [user] = useState(() => {
     const data = localStorage.getItem("user");
-    return data ? JSON.parse(data) : null;
+
+    try {
+      return data ? JSON.parse(data) : null;
+    } catch {
+      return null;
+    }
   });
 
   const handleLogout = () => {
     localStorage.removeItem("isLogged");
+    localStorage.removeItem("currentUser");
+
     navigate("/login");
   };
 
@@ -37,11 +45,17 @@ function Profile() {
         <main className="profile-page">
           <div className="profile-login-box">
             <FaUser />
-            <h2>Please Login</h2>
-            <p>You need to login to view your profile.</p>
+
+            <h2>Welcome to JobHub</h2>
+
+            <p>
+              Login to manage your profile, applications,
+              skills and career information.
+            </p>
 
             <button onClick={() => navigate("/login")}>
-              Login
+              Login to Continue
+              <FaArrowRight />
             </button>
           </div>
         </main>
@@ -58,13 +72,15 @@ function Profile() {
       <main className="profile-page">
         <div className="profile-container">
 
+          {/* Profile Header */}
           <section className="profile-header">
+
             <div className="profile-avatar">
               <FaUser />
             </div>
 
             <div className="profile-header-content">
-              <h1>{user.name}</h1>
+              <h1>{user.name || "Job Seeker"}</h1>
 
               <p>
                 <FaBriefcase />
@@ -77,15 +93,22 @@ function Profile() {
               </span>
             </div>
 
-            <button className="edit-btn">
+            <button
+              className="edit-btn"
+              onClick={() => alert("Profile editing coming soon!")}
+            >
               <FaEdit />
               Edit Profile
             </button>
+
           </section>
 
+          {/* Profile Information */}
           <section className="profile-grid">
 
+            {/* Personal Information */}
             <div className="profile-card">
+
               <h2>Personal Information</h2>
 
               <div className="profile-item">
@@ -95,7 +118,9 @@ function Profile() {
 
                 <div>
                   <small>Full Name</small>
-                  <strong>{user.name}</strong>
+                  <strong>
+                    {user.name || "Not Added"}
+                  </strong>
                 </div>
               </div>
 
@@ -106,7 +131,9 @@ function Profile() {
 
                 <div>
                   <small>Email Address</small>
-                  <strong>{user.email}</strong>
+                  <strong>
+                    {user.email || "Not Added"}
+                  </strong>
                 </div>
               </div>
 
@@ -131,9 +158,12 @@ function Profile() {
                   <strong>India</strong>
                 </div>
               </div>
+
             </div>
 
+            {/* Professional Information */}
             <div className="profile-card">
+
               <h2>Professional Information</h2>
 
               <div className="profile-item">
@@ -143,7 +173,9 @@ function Profile() {
 
                 <div>
                   <small>Job Status</small>
-                  <strong>Actively Looking for Job</strong>
+                  <strong>
+                    Actively Looking for Job
+                  </strong>
                 </div>
               </div>
 
@@ -169,7 +201,9 @@ function Profile() {
                 </div>
               </div>
 
+              {/* Skills */}
               <div className="skills-section">
+
                 <div className="skills-title">
                   <FaCode />
                   <span>Skills</span>
@@ -181,25 +215,33 @@ function Profile() {
                   <span>JavaScript</span>
                   <span>React.js</span>
                 </div>
+
               </div>
+
             </div>
 
           </section>
 
+          {/* Career CTA */}
           <section className="profile-bottom">
+
             <div>
-              <h2>Find Your Dream Job</h2>
+              <h2>Ready for your next opportunity?</h2>
+
               <p>
-                Explore new opportunities and build your career with Job Hub.
+                Explore jobs that match your skills and
+                take the next step in your career with JobHub.
               </p>
             </div>
 
             <div className="bottom-buttons">
+
               <button
                 className="jobs-btn"
                 onClick={() => navigate("/jobs")}
               >
                 Browse Jobs
+                <FaArrowRight />
               </button>
 
               <button
@@ -209,7 +251,9 @@ function Profile() {
                 <FaSignOutAlt />
                 Logout
               </button>
+
             </div>
+
           </section>
 
         </div>
